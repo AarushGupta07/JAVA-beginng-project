@@ -20,7 +20,7 @@ class calculator
     public static void main()
     {
         Scanner sn = new Scanner (System.in);
-        String choise="";
+        String choise="";//to intialize the value of choise 
         System.out.println("enter add for addition \nsubstraction for difference \nmultiplication for product \ndivision for division \nexit to end");
         choise = sn.nextLine();
         while(choise != "exit")
@@ -30,7 +30,7 @@ class calculator
              case "add": {System.out.println("enter the values");
                           int first = sn.nextInt();
                           int second = sn.nextInt();
-                          sn.nextLine();
+                          sn.nextLine();// to clear the buffer 
                           System.out.println(calculator.add(first,second));
                          }break;
              case "substraction":{ System.out.println("enter the values");
@@ -51,11 +51,11 @@ class calculator
                               sn.nextLine();
                               System.out.println(calculator.division(first,second));
                              }break;
-             case "exit": {System.exit(0);}
-             default : System.out.println("wrong choise");
+             case "exit": {System.exit(0);}// ends the code
+             default : System.out.println("wrong choise");// if no case runs it tells the user
          }
          System.out.println("now?");
-         choise = sn.nextLine();
+         choise = sn.nextLine();//to input the new value of choise 
         }
     }
 }
