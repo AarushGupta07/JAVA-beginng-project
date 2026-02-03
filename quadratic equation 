@@ -1,0 +1,76 @@
+import java.util.*;
+class quatric_eqn
+{
+    public static void main()
+    {
+        Scanner sn=new Scanner (System.in);
+        String a1,b1,c1,n,d,rt;
+        double a=0.0,b=0.0,c=0.0;
+        System.out.println("if the equation is in the form of ax^2+bx+c=0 , enter the value of a,b&c");
+        a1=sn.nextLine();
+        b1=sn.nextLine();
+        c1=sn.nextLine();
+        for(int i=0;i<a1.length();i++)
+        {
+            if(a1.charAt(i)=='/')
+            {
+                n=a1.substring(0,i);
+                d=a1.substring(i+1);
+                a=Integer.valueOf(n)/Integer.valueOf(d); 
+            }
+            else if(a1.charAt(i)=='√')
+            {
+                rt=a1.substring(i+1);
+                a=Math.sqrt(Integer.valueOf(rt));
+            }
+            else 
+            a=Integer.valueOf(a1); 
+        }
+        for(int i=0;i<b1.length();i++)
+        {
+            if(b1.charAt(i)=='/')
+            {
+                n=b1.substring(0,i);
+                d=b1.substring(i+1);
+                b=Integer.valueOf(n)/Integer.valueOf(d); 
+            }
+            else if(b1.charAt(i)=='√')
+            {
+                rt=b1.substring(i+1);
+                b=Math.sqrt(Integer.valueOf(rt));
+            }
+            else 
+            b=Integer.valueOf(b1);
+        }
+        for(int i=0;i<c1.length();i++)
+        {
+            if(c1.charAt(i)=='/')
+            {
+                n=c1.substring(0,i);
+                d=c1.substring(i+1);
+                c=Integer.valueOf(n)/Integer.valueOf(d); 
+            }
+            else if(c1.charAt(i)=='√')
+            {
+                rt=c1.substring(i+1);
+                c=Math.sqrt(Integer.valueOf(rt));
+            }
+            else 
+            c=Integer.valueOf(c1);
+        }
+        double D =(b*b)/(4*a*c);
+        if(D<0)
+        System.out.println("the roots are imaginary");
+        else if(D==0)
+        {
+            double x=(-b+D)/(2*a);
+            System.out.println("there are same values: "+x);
+        }
+        else
+        {
+            double x=(-b+D)/(2*a);
+            double x1=(-b-D)/(2*a);
+            System.out.println("the values are: "+x+"\t"+x1);
+        }
+    }
+}
