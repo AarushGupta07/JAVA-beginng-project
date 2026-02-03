@@ -58,18 +58,18 @@ class quatric_eqn
             else 
             c=Integer.valueOf(c1);
         }
-        double D =(b*b)/(4*a*c);
+        double D =(b*b)-(4*a*c);
         if(D<0)
         System.out.println("the roots are imaginary");
         else if(D==0)
         {
-            double x=(-b+D)/(2*a);
+            double x=(-b+Math.sqrt(D)))/(2*a);
             System.out.println("there are same values: "+x);
         }
         else
         {
-            double x=(-b+D)/(2*a);
-            double x1=(-b-D)/(2*a);
+            double x=(-b+(Math.sqrt(D)))/(2*a);
+            double x1=(-b-(Math.sqrt(D)))/(2*a);
             System.out.println("the values are: "+x+"\t"+x1);
         }
     }
